@@ -1,0 +1,139 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@theme {
+  --color-ink: #0a0e14;
+  --color-ink-raise: #111823;
+  --color-ink-soft: #161f2b;
+  --color-paper: #f6f4f1;
+  --color-paper-raise: #ffffff;
+  --color-paper-line: #e2ddd6;
+  --color-amber: #e8792b;
+  --color-amber-deep: #c25f17;
+  --color-steel: #8b9aab;
+  --color-slate: #5a6472;
+  --color-success: #3d9a6b;
+
+  --font-display: "Sora", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Instrument Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  /* Radii — softened one step from the original hard-edge draft.
+     Kept well short of the 24-32px SaaS look so the drafting character survives. */
+  --radius-ctl: 6px;
+  --radius-card: 10px;
+  --radius-panel: 28px;
+}
+
+@layer base {
+  :root {
+    --ink-line: rgba(255, 255, 255, 0.09);
+    --radius: 4px;
+  }
+
+  * {
+    border-color: var(--ink-line);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    background-color: var(--color-ink);
+    color: var(--color-paper);
+    font-family: var(--font-body);
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    letter-spacing: -0.025em;
+    line-height: 1.06;
+  }
+
+  ::selection {
+    background: var(--color-amber);
+    color: #0a0e14;
+  }
+}
+
+@layer components {
+  /* Blueprint grid — drafting paper, not sci-fi */
+  .blueprint {
+    background-image:
+      linear-gradient(to right, rgba(255, 255, 255, 0.055) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.055) 1px, transparent 1px);
+    background-size: 72px 72px;
+  }
+
+  .blueprint-paper {
+    background-image:
+      linear-gradient(to right, rgba(10, 14, 20, 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(10, 14, 20, 0.05) 1px, transparent 1px);
+    background-size: 72px 72px;
+  }
+
+  .fade-mask {
+    mask-image: radial-gradient(ellipse 85% 65% at 50% 32%, #000 35%, transparent 100%);
+  }
+
+  .fade-mask-b {
+    mask-image: linear-gradient(to bottom, #000 0%, transparent 100%);
+  }
+
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  .tick::before,
+  .tick::after {
+    content: "";
+    position: absolute;
+    width: 9px;
+    height: 9px;
+    border-color: var(--color-amber);
+  }
+
+  /* Inset to 7px so the marks sit inside the softened corner radius
+     instead of floating off the curve. */
+  .tick::before {
+    top: 7px;
+    left: 7px;
+    border-top-width: 1.5px;
+    border-left-width: 1.5px;
+  }
+
+  .tick::after {
+    bottom: 7px;
+    right: 7px;
+    border-bottom-width: 1.5px;
+    border-right-width: 1.5px;
+  }
+
+  .rule-amber {
+    background: linear-gradient(to right, var(--color-amber), transparent);
+    height: 1px;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-pretty {
+    text-wrap: pretty;
+  }
+}
