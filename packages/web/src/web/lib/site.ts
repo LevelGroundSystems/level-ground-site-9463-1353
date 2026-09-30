@@ -16,7 +16,6 @@ export const site = {
 	remote: "Remote for the rest of the country",
 	audience: "small and medium businesses",
 	bookingUrl: "https://calendar.app.google/4FDPAxKPJRv4Gy9w5",
-	bookingIsPlaceholder: false,
 };
 
 /**
@@ -35,31 +34,4 @@ export const nav = [
 	{ label: "Services", href: "/services" },
 	{ label: "How It Works", href: "/how-it-works" },
 	{ label: "About", href: "/about" },
-];
-
-export const teamSizes = [
-	"Just me / 2 people",
-	"3–10 people",
-	"11–25 people",
-	"26–50 people",
-	"More than 50 people",
-];
-
-export const focusAreas = [
-	"Sales & marketing",
-	"Operations & day-to-day efficiency",
-	"Both",
-	"Not sure yet — that's why I'm asking",
-];
-
-/** The six gaps from the brief, written the way an owner would say them. */
-export const drags = [
-	"We're slow to answer inquiries and we lose work to whoever replied first",
-	"Quotes go out and nobody chases them",
-	"Follow-up depends on whoever remembers",
-	"Marketing only goes out when we're slow",
-	"Past customers never hear from us again",
-	"I find out how we did months later, not weekly",
-	"I'm doing four jobs and I'm the bottleneck",
-	"All of the above, honestly",
 ];

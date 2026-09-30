@@ -1,5 +1,4 @@
-import { CalendarClock, Check, Clock, Mail, MapPin, Phone, TriangleAlert } from "lucide-react";
-import { DiagnosticForm } from "../components/diagnostic-form";
+import { ArrowUpRight, CalendarClock, Check, Clock, Mail, MapPin, Phone } from "lucide-react";
 import {
 	Btn,
 	Container,
@@ -28,7 +27,7 @@ const promises = [
 	},
 	{
 		t: "You'll hear from a person",
-		b: "There's no chatbot behind this form. It's me, usually within a business day.",
+		b: "There's no chatbot or sales team behind the calendar. The person on the call is me.",
 	},
 ];
 
@@ -51,16 +50,16 @@ export default function Contact() {
 						</Reveal>
 						<Reveal delay={0.12}>
 							<p className="mt-8 text-[1.125rem] leading-relaxed text-steel text-pretty">
-								Tell me a bit about your business and I'll come back within a business day. The first
-								call is {offer.introMinutes} minutes, high level. If there's something worth building,
-								the diagnostic that follows is free too, and the write-up is yours to keep.
+								Pick a time that works for you. The first call is {offer.introMinutes} minutes, high
+								level. If there's something worth building, the diagnostic that follows is free too,
+								and the write-up is yours to keep.
 							</p>
 						</Reveal>
 						<Reveal delay={0.18}>
 							<div className="mt-9 flex flex-wrap items-center gap-x-7 gap-y-3 text-[0.9375rem] text-steel">
 								<span className="flex items-center gap-2">
 									<Clock className="h-4 w-4 text-amber" />
-									Form takes about 2 minutes
+									{offer.introMinutes} minutes, on your schedule
 								</span>
 								<span className="flex items-center gap-2">
 									<Check className="h-4 w-4 text-amber" />
@@ -76,42 +75,45 @@ export default function Contact() {
 				</Container>
 			</Section>
 
-			{/* -------------------------------- FORM ------------------------------- */}
+			{/* ------------------------------ BOOKING ------------------------------ */}
 			<Section tone="paper">
 				<Container className="py-20 md:py-28">
 					<div className="grid gap-12 lg:grid-cols-[1.25fr_1fr] lg:gap-16">
-						{/* Form */}
+						{/* Booking */}
 						<Reveal>
-							<DiagnosticForm source="contact-page" tone="paper" />
-						</Reveal>
-
-						{/* Sidebar */}
-						<div className="space-y-6">
-							<Reveal delay={0.08}>
-								<div className="border border-paper-line bg-paper-raise p-8">
-									<div className="eyebrow text-slate/70">What the diagnostic gives you</div>
-									<ul className="mt-6 space-y-4">
-										{whatYouGet.map((w) => (
-											<li key={w} className="flex gap-3.5 text-[0.9375rem] leading-relaxed">
-												<Check className="mt-1 h-4 w-4 flex-none text-amber" />
-												<span className="text-ink/85 text-pretty">{w}</span>
-											</li>
-										))}
-									</ul>
+							<div className="flex h-full flex-col border-2 border-amber/60 bg-paper-raise p-8 md:p-12">
+								<div className="flex items-center gap-2.5">
+									<CalendarClock className="h-4 w-4 text-amber" />
+									<span className="eyebrow text-amber-deep">Pick a time yourself</span>
 								</div>
-							</Reveal>
-
-							<Reveal delay={0.14}>
-								<div className="border border-paper-line bg-paper-raise p-8">
-									<div className="eyebrow text-slate/70">Rather skip the form?</div>
-									<p className="mt-4 text-[0.9375rem] leading-relaxed text-slate text-pretty">
-										Call or text me directly. I answer my own phone — if I don't pick up, I'm on a
-										call and you'll hear back the same day.
+								<h2 className="mt-6 text-[clamp(1.9rem,3.4vw,2.6rem)] leading-tight text-ink text-balance">
+									Grab any open slot on my calendar.
+								</h2>
+								<p className="mt-5 max-w-lg text-[1.0625rem] leading-relaxed text-slate text-pretty">
+									No form to fill out first. Bring a rough idea of how work moves through your
+									business today, and we'll spend the call on where it gets stuck.
+								</p>
+								<div className="mt-9">
+									<Btn href={site.bookingUrl} size="lg">
+										<CalendarClock className="h-4 w-4" />
+										Book a {offer.introMinutes}-minute call
+										<ArrowUpRight className="h-4 w-4" />
+									</Btn>
+									<p className="mt-3.5 text-[0.875rem] text-slate/80">
+										Opens Google Calendar in a new tab.
 									</p>
-									<div className="mt-6 space-y-3">
+								</div>
+
+								<div className="mt-auto border-t border-paper-line pt-8 lg:mt-12">
+									<div className="eyebrow text-slate/70">Rather call or email?</div>
+									<p className="mt-3 text-[0.9375rem] leading-relaxed text-slate text-pretty">
+										I answer my own phone. If you get voicemail I'm on another call, and you'll hear
+										back the same day.
+									</p>
+									<div className="mt-5 grid gap-3">
 										<a
 											href={site.phoneHref}
-											className="flex items-center gap-3 border border-paper-line px-4 py-3.5 transition-colors hover:border-amber"
+											className="flex items-center gap-3 border border-paper-line bg-white px-4 py-3.5 transition-colors hover:border-amber"
 										>
 											<Phone className="h-4 w-4 flex-none text-amber" />
 											<span className="font-display text-[1.0625rem] font-semibold text-ink">
@@ -119,75 +121,37 @@ export default function Contact() {
 											</span>
 										</a>
 										<a
-											href={`mailto:${site.email}?subject=AI%20diagnostic`}
-											className="flex items-center gap-3 border border-paper-line px-4 py-3.5 transition-colors hover:border-amber"
+											href={`mailto:${site.email}?subject=Intro%20call`}
+											className="flex items-center gap-3 border border-paper-line bg-white px-4 py-3.5 transition-colors hover:border-amber"
 										>
 											<Mail className="h-4 w-4 flex-none text-amber" />
-											<span className="break-all text-[0.9375rem] font-medium text-ink">
+											<span className="text-[0.9375rem] font-medium text-ink">
 												{site.email}
 											</span>
 										</a>
 									</div>
-									<div className="mt-6 flex items-center gap-2.5 border-t border-paper-line pt-5 text-[0.875rem] text-slate">
-										<MapPin className="h-3.5 w-3.5 flex-none text-slate/60" />
-										{site.location}
-									</div>
 								</div>
-							</Reveal>
+							</div>
+						</Reveal>
 
-							{/* Booking — placeholder until Nate pastes his real link */}
-							<Reveal delay={0.2}>
-								<div className="border border-paper-line bg-paper-raise p-8">
-									<div className="flex items-center gap-2.5">
-										<CalendarClock className="h-4 w-4 text-amber" />
-										<span className="eyebrow text-slate/70">Pick a time yourself</span>
-									</div>
-									<p className="mt-4 text-[0.9375rem] leading-relaxed text-slate text-pretty">
-										If you'd rather just grab a slot, book straight onto my calendar. Same
-										conversation, one less step.
-									</p>
-
-									{site.bookingIsPlaceholder ? (
-										<div className="mt-6 border border-dashed border-amber/50 bg-amber/[0.04] p-5">
-											<div className="flex items-start gap-3">
-												<TriangleAlert className="mt-0.5 h-4 w-4 flex-none text-amber-deep" />
-												<div>
-													<div className="eyebrow text-amber-deep">
-														Booking link not connected yet
-													</div>
-													<p className="mt-2 text-[0.875rem] leading-relaxed text-slate text-pretty">
-														Nate — paste your Google Calendar appointment link into{" "}
-														<code className="font-mono text-[0.8125rem] text-ink">
-															bookingUrl
-														</code>{" "}
-														in{" "}
-														<code className="font-mono text-[0.8125rem] text-ink">
-															lib/site.ts
-														</code>{" "}
-														and set{" "}
-														<code className="font-mono text-[0.8125rem] text-ink">
-															bookingIsPlaceholder
-														</code>{" "}
-														to false. Until then, visitors are pointed at the phone number
-														above.
-													</p>
-												</div>
-											</div>
-										</div>
-									) : (
-										<Btn
-											href={site.bookingUrl}
-											variant="outline-dark"
-											size="lg"
-											className="mt-6 w-full"
-										>
-											<CalendarClock className="h-4 w-4" />
-											Pick a time
-										</Btn>
-									)}
+						{/* Sidebar */}
+						<Reveal delay={0.08}>
+							<div className="border border-paper-line bg-paper-raise p-8 lg:sticky lg:top-28">
+								<div className="eyebrow text-slate/70">What the call gives you</div>
+								<ul className="mt-6 space-y-4">
+									{whatYouGet.map((w) => (
+										<li key={w} className="flex gap-3.5 text-[0.9375rem] leading-relaxed">
+											<Check className="mt-1 h-4 w-4 flex-none text-amber" />
+											<span className="text-ink/85 text-pretty">{w}</span>
+										</li>
+									))}
+								</ul>
+								<div className="mt-8 flex items-center gap-2.5 border-t border-paper-line pt-5 text-[0.875rem] text-slate">
+									<MapPin className="h-3.5 w-3.5 flex-none text-slate/60" />
+									{site.location}
 								</div>
-							</Reveal>
-						</div>
+							</div>
+						</Reveal>
 					</div>
 				</Container>
 			</Section>
