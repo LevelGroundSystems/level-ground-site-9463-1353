@@ -39,7 +39,7 @@ function Wordmark() {
 		<Link to="/" className="group flex items-center gap-2.5">
 			<LevelMark />
 			<span className="font-display text-[1.0625rem] font-semibold tracking-tight text-paper">
-				Level Ground<span className="hidden text-steel sm:inline"> Systems</span>
+				Level Ground<span className="text-steel"> Systems</span>
 			</span>
 		</Link>
 	);
