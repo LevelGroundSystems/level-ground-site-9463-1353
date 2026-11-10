@@ -12,6 +12,7 @@ import {
 } from "../components/primitives";
 import { serviceIcons } from "../lib/service-icons";
 import { offer, services, site } from "../lib/site";
+import { usePageMeta } from "../lib/seo";
 
 /* The six gaps a small business loses on — from the business brief. Framed as
    the honest comparison rather than as a list of AI features.
@@ -98,6 +99,11 @@ const steps = [
 ];
 
 export default function Index() {
+	usePageMeta({
+		title: "Level Ground Systems — Websites, Social Media, AI Training & Lead Generation",
+		description: "Level Ground Systems helps small businesses compete with the big ones: websites, social media, responsible AI enablement training, and lead generation. Based in Wilbraham, MA.",
+		path: "/",
+	});
 	return (
 		<>
 			{/* --------------------------------- HERO -------------------------------- */}

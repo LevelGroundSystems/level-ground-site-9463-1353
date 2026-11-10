@@ -10,6 +10,7 @@ import {
 	TickCard,
 } from "../components/primitives";
 import { site } from "../lib/site";
+import { usePageMeta } from "../lib/seo";
 
 const why = [
 	{
@@ -39,6 +40,11 @@ const why = [
 ];
 
 export default function About() {
+	usePageMeta({
+		title: "About Nate Villar | Level Ground Systems",
+		description: "Level Ground Systems is Nate Villar, a Wilbraham, MA marketer with 15 years in sales, helping small businesses compete with bigger ones.",
+		path: "/about",
+	});
 	return (
 		<>
 			{/* ------------------------------- HEADER ------------------------------ */}

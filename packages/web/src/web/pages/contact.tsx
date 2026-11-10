@@ -8,6 +8,7 @@ import {
 	Section,
 } from "../components/primitives";
 import { offer, site } from "../lib/site";
+import { usePageMeta } from "../lib/seo";
 
 const whatYouGet = [
 	`A ${offer.introMinutes}-minute call: what you do, how the work flows, where it's stuck`,
@@ -32,6 +33,11 @@ const promises = [
 ];
 
 export default function Contact() {
+	usePageMeta({
+		title: "Contact | Level Ground Systems",
+		description: "Book a free 15-minute conversation or call (413) 266-5616. Level Ground Systems, Wilbraham, MA.",
+		path: "/contact",
+	});
 	return (
 		<>
 			{/* ------------------------------- HEADER ------------------------------ */}
