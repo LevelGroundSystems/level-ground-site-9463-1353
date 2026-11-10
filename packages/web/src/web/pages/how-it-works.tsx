@@ -10,6 +10,7 @@ import {
 	TickCard,
 } from "../components/primitives";
 import { offer, site } from "../lib/site";
+import { usePageMeta } from "../lib/seo";
 
 const steps = [
 	{
@@ -113,6 +114,11 @@ const owned = [
 ];
 
 export default function HowItWorks() {
+	usePageMeta({
+		title: "How It Works | Level Ground Systems",
+		description: "A free short call, a free written look at your biggest gaps, then the build. You know whether it's worth it before any money changes hands.",
+		path: "/how-it-works",
+	});
 	return (
 		<>
 			{/* -------------------------------- HEADER ------------------------------- */}

@@ -8,8 +8,15 @@ import {
 	Section,
 } from "../components/primitives";
 import { nav, site } from "../lib/site";
+import { usePageMeta } from "../lib/seo";
 
 export default function NotFound() {
+	usePageMeta({
+		title: "Page not found | Level Ground Systems",
+		description: "This page doesn't exist.",
+		path: "/404",
+		noindex: true,
+	});
 	return (
 		<Section className="grid min-h-[80vh] place-items-center overflow-hidden pt-[72px]">
 			<GridBackdrop />
