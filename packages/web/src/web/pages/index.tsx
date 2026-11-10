@@ -209,8 +209,8 @@ export default function Index() {
 			</Section>
 
 			{/* ------------------------------- THE GAPS ------------------------------ */}
+			{/* No blueprint grid here: its lines collided with the table's row rules. */}
 			<Section className="overflow-hidden">
-				<GridBackdrop />
 				<Container className="relative py-24 md:py-32">
 					<Reveal>
 						<SectionHeading
