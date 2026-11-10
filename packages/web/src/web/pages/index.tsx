@@ -10,7 +10,8 @@ import {
 	StatCard,
 	TickCard,
 } from "../components/primitives";
-import { offer, site } from "../lib/site";
+import { serviceIcons } from "../lib/service-icons";
+import { offer, services, site } from "../lib/site";
 
 /* The six gaps a small business loses on — from the business brief. Framed as
    the honest comparison rather than as a list of AI features.
@@ -69,33 +70,6 @@ const contrast = [
 	},
 ];
 
-const pillars = [
-	{
-		tag: "Pillar 01 — the specialty",
-		title: "Sales & marketing",
-		lede: "Fifteen years of carrying a sales number, built into systems.",
-		items: [
-			["Inquiry response & follow-through", "Stop losing work to whoever answered first"],
-			["Quote & proposal follow-up", "The quotes you already wrote start closing"],
-			["Outbound & appointment setting", "A pipeline that survives a slow week"],
-			["Email marketing & newsletters", "Past customers turn into repeat work"],
-			["Social content & posting", "You stop looking inactive"],
-		],
-	},
-	{
-		tag: "Pillar 02",
-		title: "Operations & efficiency",
-		lede: "The admin that eats the week. You feel this one in the first seven days.",
-		items: [
-			["Admin & data entry", "Hours back, fewer mistakes"],
-			["Communication & inbox handling", "Nothing sits unanswered for three days"],
-			["Scheduling & reminders", "Fuller calendar, fewer no-shows"],
-			["Reporting", "You run the business on facts, not feel"],
-			["Repetitive task automation", "Your people do the work that grows the business"],
-		],
-	},
-];
-
 const steps = [
 	{
 		icon: Phone,
@@ -136,7 +110,7 @@ export default function Index() {
 				<Container className="relative pb-24 pt-20 md:pb-32 md:pt-28">
 					<div className="max-w-4xl">
 						<Reveal>
-							<Eyebrow className="mb-8">AI systems for small &amp; medium businesses</Eyebrow>
+							<Eyebrow className="mb-8">Websites · Social media · AI training · Lead generation</Eyebrow>
 						</Reveal>
 						<Reveal delay={0.06}>
 							<h1 className="text-[clamp(2.75rem,6vw,5.25rem)] text-balance">
@@ -164,7 +138,7 @@ export default function Index() {
 									<ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
 								</Btn>
 								<Btn to="/services" variant="outline" size="lg">
-									See what I build
+									See the services
 								</Btn>
 							</div>
 						</Reveal>
@@ -343,47 +317,47 @@ export default function Index() {
 			</Section>
 
 			{/* ------------------------------- SERVICES ------------------------------ */}
-			<Section tone="paper">
+			<Section tone="paper" id="services">
 				<Container className="py-24 md:py-32">
 					<Reveal>
 						<SectionHeading
 							tone="paper"
 							eyebrow="04 / What I do"
-							title="Sales and marketing first. Then everything eating your week."
-							lede="Two pillars. Sales and marketing is the deep end. Operations is what gives you your time back."
+							title="Four services. All about helping you compete."
+							lede="Get found, look active, work smarter, and keep the calendar full."
 						/>
 					</Reveal>
 
-					<div className="mt-14 grid gap-6 lg:grid-cols-2">
-						{pillars.map((p, i) => (
-							<Reveal key={p.title} delay={i * 0.08} className="h-full">
-								<div
-									className={
-										i === 0
-											? "flex h-full flex-col rounded-[var(--radius-card)] border-2 border-amber/60 bg-paper-raise p-8 md:p-10"
-											: "flex h-full flex-col rounded-[var(--radius-card)] border border-paper-line bg-paper-raise p-8 md:p-10"
-									}
-								>
-									<div className={i === 0 ? "eyebrow text-amber" : "eyebrow text-slate/70"}>{p.tag}</div>
-									<h3 className="mt-5 text-[1.875rem] leading-tight">{p.title}</h3>
-									<p className="mt-3.5 text-[1.0625rem] leading-relaxed text-slate text-pretty">
-										{p.lede}
-									</p>
-									<dl className="mt-8 flex-1 space-y-5 border-t border-paper-line pt-7">
-										{p.items.map(([name, outcome]) => (
-											<div key={name}>
-												<dt className="font-display text-[1.0625rem] font-semibold text-ink">
-													{name}
-												</dt>
-												<dd className="mt-1 text-[0.9375rem] leading-snug text-slate">
-													{outcome}
-												</dd>
+					<div className="mt-14 grid gap-6 md:grid-cols-2">
+						{services.map((svc, i) => {
+							const Icon = serviceIcons[svc.id];
+							return (
+								<Reveal key={svc.id} delay={i * 0.06} className="h-full">
+									<a
+										href={`/services#${svc.id}`}
+										className="group flex h-full flex-col rounded-[var(--radius-card)] border border-paper-line bg-paper-raise p-8 transition-colors hover:border-amber/60 md:p-10"
+									>
+										<div className="flex items-center gap-4">
+											<div className="grid h-12 w-12 shrink-0 place-items-center rounded-[var(--radius-ctl)] border border-amber/40 bg-amber/10">
+												<Icon className="h-5 w-5 text-amber" />
 											</div>
-										))}
-									</dl>
-								</div>
-							</Reveal>
-						))}
+											<div className="eyebrow text-slate/70">{String(i + 1).padStart(2, "0")}</div>
+										</div>
+										<h3 className="mt-6 text-[1.75rem] leading-tight">{svc.name}</h3>
+										<p className="mt-2 font-display text-[1.0625rem] font-semibold text-amber">
+											{svc.short}
+										</p>
+										<p className="mt-4 flex-1 text-[1.0625rem] leading-relaxed text-slate text-pretty">
+											{svc.body}
+										</p>
+										<span className="mt-6 inline-flex items-center gap-1.5 text-[0.9375rem] font-semibold text-ink">
+											What's included
+											<ArrowRight className="h-4 w-4 text-amber transition-transform group-hover:translate-x-0.5" />
+										</span>
+									</a>
+								</Reveal>
+							);
+						})}
 					</div>
 
 					<Reveal delay={0.16}>
