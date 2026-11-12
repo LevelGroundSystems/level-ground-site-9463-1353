@@ -12,7 +12,7 @@ import {
 } from "../components/primitives";
 import { serviceIcons } from "../lib/service-icons";
 import { services, site } from "../lib/site";
-import { usePageMeta } from "../lib/seo";
+import { pageMeta, usePageMeta } from "../lib/seo";
 
 const notFor = [
 	{
@@ -26,11 +26,7 @@ const notFor = [
 ];
 
 export default function Services() {
-	usePageMeta({
-		title: "Services — Websites, Social Media, AI Training & Lead Generation | Level Ground Systems",
-		description: "Four services for small businesses: websites, social media, responsible AI enablement training, and lead generation. See what's included in each.",
-		path: "/services",
-	});
+	usePageMeta(pageMeta.services);
 	/* Links like /services#websites: jump to that section once it has rendered. */
 	useEffect(() => {
 		const id = window.location.hash.slice(1);

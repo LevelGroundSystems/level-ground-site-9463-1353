@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import { Route, Switch, useLocation } from "wouter";
-import { AgentFeedback } from "@runablehq/website-runtime";
 import { Provider } from "./components/provider";
 import { SiteFooter } from "./components/site-footer";
 import { SiteNav } from "./components/site-nav";
@@ -43,8 +42,6 @@ function App() {
 		<Provider>
 			<ScrollToTop />
 			<Layout />
-			{/* Do not remove — off by default, activated by parent iframe via postMessage */}
-			{import.meta.env.DEV && <AgentFeedback />}
 		</Provider>
 	);
 }
