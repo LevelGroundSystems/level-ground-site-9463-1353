@@ -4,6 +4,7 @@ import tailwind from "@tailwindcss/vite";
 import path from "path";
 import honoDevPlugin from "./vite/__plugins/hono-dev-plugin";
 import assetOptimizerPlugin from "./vite/__plugins/asset-optimizer-plugin";
+import prerenderPlugin from "./vite/prerender-plugin";
 import ports from "../../__ports.cjs";
 
 const root = path.resolve(__dirname, "../..");
@@ -21,6 +22,7 @@ export default defineConfig(({ mode }) => {
       react(),
       tailwind(),
       assetOptimizerPlugin(),
+      prerenderPlugin(),
     ],
     resolve: {
       alias: {
