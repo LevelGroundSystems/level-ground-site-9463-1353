@@ -17,27 +17,15 @@ export type PageMeta = {
  */
 export const pageMeta = {
 	home: {
-		title: "Level Ground Systems — Websites, Social Media, AI Training & Lead Generation",
+		title: "Level Ground Systems — Sales & Marketing Consulting for Small Businesses | Wilbraham, MA",
 		description:
-			"Level Ground Systems helps small businesses compete with the big ones: websites, social media, responsible AI enablement training, and lead generation. Based in Wilbraham, MA.",
+			"Nate Villar is a sales and marketing consultant helping small business owners grow profit margin and get time back in their week. Websites, social media, AI training, lead generation, lead follow-up, and task automation. Wilbraham, MA.",
 		path: "/",
-	},
-	services: {
-		title: "Services — Websites, Social Media, AI Training & Lead Generation | Level Ground Systems",
-		description:
-			"Four services for small businesses: websites, social media, responsible AI enablement training, and lead generation. See what's included in each.",
-		path: "/services",
-	},
-	howItWorks: {
-		title: "How It Works | Level Ground Systems",
-		description:
-			"A free short call, a free written look at your biggest gaps, then the build. You know whether it's worth it before any money changes hands.",
-		path: "/how-it-works",
 	},
 	about: {
 		title: "About Nate Villar | Level Ground Systems",
 		description:
-			"Level Ground Systems is Nate Villar, a Wilbraham, MA marketer with 15 years in sales, helping small businesses compete with bigger ones.",
+			"Level Ground Systems is Nate Villar, a Wilbraham, MA consultant with 15 years in sales and marketing, helping small businesses win more work and waste less time.",
 		path: "/about",
 	},
 	contact: {

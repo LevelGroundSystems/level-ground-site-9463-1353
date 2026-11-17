@@ -92,8 +92,8 @@ export function SiteNav() {
 						<Phone className="h-3.5 w-3.5" />
 						{site.phone}
 					</a>
-					<Btn to="/contact" variant="amber">
-						Book a conversation
+					<Btn href={site.bookingUrl} variant="amber">
+						Book a free call
 					</Btn>
 				</div>
 
@@ -122,8 +122,8 @@ export function SiteNav() {
 						<a href={site.phoneHref} className="border-b border-white/[0.07] py-3.5 text-[1.0625rem] text-steel">
 							{site.phone}
 						</a>
-						<Btn to="/contact" variant="amber" size="lg" className="mt-5">
-							Book a conversation
+						<Btn href={site.bookingUrl} variant="amber" size="lg" className="mt-5">
+							Book a free call
 						</Btn>
 					</div>
 				</div>

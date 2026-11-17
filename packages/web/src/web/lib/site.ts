@@ -4,8 +4,8 @@ export const site = {
 	/** Short form — only where horizontal space is tight, e.g. the nav wordmark. */
 	nameShort: "Level Ground",
 	owner: "Nate Villar",
-	tagline: "AI that puts small businesses on even footing.",
-	longTagline: "AI systems that let a small business run like a big one.",
+	tagline: "Grow your profit margin. Get time back in your week.",
+	longTagline: "Sales and marketing consulting that helps small business owners grow profit margin and get time back in their week.",
 	phone: "(413) 266-5616",
 	phoneHref: "tel:+14132665616",
 	email: "nate@levelgroundsystems.com",
@@ -91,10 +91,38 @@ export const services = [
 		],
 		outcome: "A pipeline that survives a slow week",
 	},
+	{
+		id: "lead-follow-up",
+		cta: "lead follow-up",
+		name: "Lead Follow-Up System",
+		short: "Every lead gets a fast reply and follow-up until there's a yes or no.",
+		body: "Calls, forms, and messages answered fast, missed calls texted back, and every open quote followed up automatically, so no job slips through the cracks.",
+		includes: [
+			"Instant reply to calls, forms, and messages",
+			"Missed calls get a text back",
+			"Automatic follow-up on every open quote",
+			"Booking straight onto your calendar",
+		],
+		outcome: "No more leads lost to slow follow-up",
+	},
+	{
+		id: "automation",
+		cta: "automation",
+		name: "Task Automation",
+		short: "Hand off the repetitive busywork and get hours back every week.",
+		body: "The mundane tasks that eat your week, like data entry, reminders, follow-up emails, and scheduling, set up to run on their own.",
+		includes: [
+			"A look at where your week actually goes",
+			"Repetitive tasks set up to run automatically",
+			"Built in the tools you already use",
+			"Your team shown how it works",
+		],
+		outcome: "Hours back in your week",
+	},
 ] as const;
 
 export const nav = [
-	{ label: "Services", href: "/services" },
-	{ label: "How It Works", href: "/how-it-works" },
+	{ label: "Home", href: "/" },
 	{ label: "About", href: "/about" },
+	{ label: "Contact", href: "/contact" },
 ];

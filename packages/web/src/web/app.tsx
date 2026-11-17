@@ -5,10 +5,8 @@ import { SiteFooter } from "./components/site-footer";
 import { SiteNav } from "./components/site-nav";
 import About from "./pages/about";
 import Contact from "./pages/contact";
-import HowItWorks from "./pages/how-it-works";
 import Index from "./pages/index";
 import NotFound from "./pages/not-found";
-import Services from "./pages/services";
 
 function ScrollToTop() {
 	const [location] = useLocation();
@@ -25,8 +23,6 @@ function Layout() {
 			<main className="flex-1">
 				<Switch>
 					<Route path="/" component={Index} />
-					<Route path="/services" component={Services} />
-					<Route path="/how-it-works" component={HowItWorks} />
 					<Route path="/about" component={About} />
 					<Route path="/contact" component={Contact} />
 					<Route component={NotFound} />

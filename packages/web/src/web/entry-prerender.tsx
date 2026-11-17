@@ -11,8 +11,6 @@ export { ORIGIN } from "./lib/seo";
 /** Every page to prerender. `file` is where it goes inside dist/. */
 export const pages: { meta: PageMeta; file: string }[] = [
 	{ meta: pageMeta.home, file: "index.html" },
-	{ meta: pageMeta.services, file: "services/index.html" },
-	{ meta: pageMeta.howItWorks, file: "how-it-works/index.html" },
 	{ meta: pageMeta.about, file: "about/index.html" },
 	{ meta: pageMeta.contact, file: "contact/index.html" },
 	{ meta: pageMeta.notFound, file: "404.html" },
