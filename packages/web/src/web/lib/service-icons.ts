@@ -1,4 +1,4 @@
-import { Globe, GraduationCap, Megaphone, Target } from "lucide-react";
+import { Clock, Globe, GraduationCap, Megaphone, Target } from "lucide-react";
 
 /** Icon per service id — kept out of site.ts so that file stays plain data. */
 export const serviceIcons = {
@@ -6,4 +6,5 @@ export const serviceIcons = {
 	"social-media": Megaphone,
 	"ai-training": GraduationCap,
 	"lead-generation": Target,
+	automation: Clock,
 } as const;

@@ -39,7 +39,7 @@ export default function Index() {
 				<Container className="relative pb-24 pt-20 md:pb-28 md:pt-28">
 					<div className="max-w-3xl">
 						<Reveal>
-							<Eyebrow className="mb-8">AI consulting for small businesses</Eyebrow>
+							<Eyebrow className="mb-8">Sales &amp; marketing consultant for small businesses</Eyebrow>
 						</Reveal>
 						<Reveal delay={0.06}>
 							<h1 className="text-[clamp(2.6rem,5.6vw,4.75rem)] text-balance">
@@ -80,13 +80,19 @@ export default function Index() {
 			<Section tone="paper" id="services">
 				<Container className="py-20 md:py-28">
 					<Reveal>
-						<SectionHeading tone="paper" eyebrow="What I help with" title="Four ways I help." />
+						<SectionHeading tone="paper" eyebrow="What I help with" title="Five ways I help." />
 					</Reveal>
 					<div className="mt-12 grid gap-5 sm:grid-cols-2">
 						{services.map((svc, i) => {
 							const Icon = serviceIcons[svc.id];
 							return (
-								<Reveal key={svc.id} delay={i * 0.05} className="h-full">
+								<Reveal
+									key={svc.id}
+									delay={i * 0.05}
+									className={
+										i === services.length - 1 && services.length % 2 === 1 ? "h-full sm:col-span-2" : "h-full"
+									}
+								>
 									<div className="flex h-full gap-5 rounded-[var(--radius-card)] border border-paper-line bg-paper-raise p-7">
 										<div className="grid h-11 w-11 shrink-0 place-items-center rounded-[var(--radius-ctl)] border border-amber/40 bg-amber/10">
 											<Icon className="h-5 w-5 text-amber" />

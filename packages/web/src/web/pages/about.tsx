@@ -29,7 +29,7 @@ export default function About() {
 						<Reveal delay={0.06}>
 							<h1 className="text-[clamp(2.4rem,5vw,4rem)] text-balance">
 								Hi, I'm Nate.
-								<span className="mt-2 block text-amber">I help owners work less and keep more.</span>
+								<span className="mt-2 block text-amber">I help small businesses win more work and waste less time.</span>
 							</h1>
 						</Reveal>
 						<Reveal delay={0.12}>

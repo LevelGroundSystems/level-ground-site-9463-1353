@@ -5,7 +5,7 @@ export const site = {
 	nameShort: "Level Ground",
 	owner: "Nate Villar",
 	tagline: "Grow your profit margin. Get time back in your week.",
-	longTagline: "AI consulting that helps small business owners grow profit margin and get time back in their week.",
+	longTagline: "Sales and marketing consulting that helps small business owners grow profit margin and get time back in their week.",
 	phone: "(413) 266-5616",
 	phoneHref: "tel:+14132665616",
 	email: "nate@levelgroundsystems.com",
@@ -90,6 +90,20 @@ export const services = [
 			"Booking straight onto your calendar",
 		],
 		outcome: "A pipeline that survives a slow week",
+	},
+	{
+		id: "automation",
+		cta: "automation",
+		name: "Task Automation",
+		short: "Hand off the repetitive busywork and get hours back every week.",
+		body: "The mundane tasks that eat your week, like data entry, reminders, follow-up emails, and scheduling, set up to run on their own.",
+		includes: [
+			"A look at where your week actually goes",
+			"Repetitive tasks set up to run automatically",
+			"Built in the tools you already use",
+			"Your team shown how it works",
+		],
+		outcome: "Hours back in your week",
 	},
 ] as const;
 
