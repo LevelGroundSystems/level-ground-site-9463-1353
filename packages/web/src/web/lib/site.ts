@@ -92,6 +92,20 @@ export const services = [
 		outcome: "A pipeline that survives a slow week",
 	},
 	{
+		id: "lead-follow-up",
+		cta: "lead follow-up",
+		name: "Lead Follow-Up System",
+		short: "Every lead gets a fast reply and follow-up until there's a yes or no.",
+		body: "Calls, forms, and messages answered fast, missed calls texted back, and every open quote followed up automatically, so no job slips through the cracks.",
+		includes: [
+			"Instant reply to calls, forms, and messages",
+			"Missed calls get a text back",
+			"Automatic follow-up on every open quote",
+			"Booking straight onto your calendar",
+		],
+		outcome: "No more leads lost to slow follow-up",
+	},
+	{
 		id: "automation",
 		cta: "automation",
 		name: "Task Automation",

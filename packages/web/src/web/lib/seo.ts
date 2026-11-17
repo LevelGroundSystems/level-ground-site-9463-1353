@@ -19,7 +19,7 @@ export const pageMeta = {
 	home: {
 		title: "Level Ground Systems — Sales & Marketing Consulting for Small Businesses | Wilbraham, MA",
 		description:
-			"Nate Villar is a sales and marketing consultant helping small business owners grow profit margin and get time back in their week. Websites, social media, AI training, lead generation, and task automation. Wilbraham, MA.",
+			"Nate Villar is a sales and marketing consultant helping small business owners grow profit margin and get time back in their week. Websites, social media, AI training, lead generation, lead follow-up, and task automation. Wilbraham, MA.",
 		path: "/",
 	},
 	about: {

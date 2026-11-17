@@ -80,7 +80,7 @@ export default function Index() {
 			<Section tone="paper" id="services">
 				<Container className="py-20 md:py-28">
 					<Reveal>
-						<SectionHeading tone="paper" eyebrow="What I help with" title="Five ways I help." />
+						<SectionHeading tone="paper" eyebrow="What I help with" title="Six ways I help." />
 					</Reveal>
 					<div className="mt-12 grid gap-5 sm:grid-cols-2">
 						{services.map((svc, i) => {
