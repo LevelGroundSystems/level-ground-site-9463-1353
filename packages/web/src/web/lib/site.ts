@@ -4,8 +4,8 @@ export const site = {
 	/** Short form — only where horizontal space is tight, e.g. the nav wordmark. */
 	nameShort: "Level Ground",
 	owner: "Nate Villar",
-	tagline: "AI that puts small businesses on even footing.",
-	longTagline: "AI systems that let a small business run like a big one.",
+	tagline: "Grow your profit margin. Get time back in your week.",
+	longTagline: "AI consulting that helps small business owners grow profit margin and get time back in their week.",
 	phone: "(413) 266-5616",
 	phoneHref: "tel:+14132665616",
 	email: "nate@levelgroundsystems.com",
@@ -94,7 +94,7 @@ export const services = [
 ] as const;
 
 export const nav = [
-	{ label: "Services", href: "/services" },
-	{ label: "How It Works", href: "/how-it-works" },
+	{ label: "Home", href: "/" },
 	{ label: "About", href: "/about" },
+	{ label: "Contact", href: "/contact" },
 ];
